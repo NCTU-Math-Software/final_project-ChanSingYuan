@@ -60,7 +60,7 @@ Now, we implement the ***probability method*** by the following steps.
 
 > 1. Initialize a list prob_list_PETER with zeros, that used to store $P(X = k)$ in index $k$.
 > 2. Define a matrix space_PETER by `multichoose(n, k)` such that each row is a possible $(n_1, \ldots, n_4)$ in $\Omega_1$, the dimension of the matrix space_PETER is $\binom{12}{3}\times 4$.
-> 3. For each row in space_PETER, we calculate the probability $P(X_1 = n_1, \ldots, X_4 = n_4)$ and add itnto the index $\sum\limits_{i = 1}^4 = X_i\cdot i$.
+> 3. For each row in space_PETER, we calculate the probability $P(X_1 = n_1, \ldots, X_4 = n_4)$ and add it into the index $\sum\limits_{i = 1}^4 = X_i\cdot i$.
 > 4. Similiary, do step $(1)$ to $(3)$ for Colin.
 > 5. Then we calculate the probability $P(\mbox{Peter win})$ be sum all the probability in the above double summation and similarly for $P(\mbox{Colin win})$ and $P(\mbox{draw})$.
 
