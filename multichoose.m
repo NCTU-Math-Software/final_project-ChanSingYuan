@@ -1,6 +1,6 @@
 function A = multichoose(n, k)
     % Given integers n >= 0 and k >= 1, find all possible integers n_1, ..., n_k
-    % such that 0 <= n_1, ..., n_k <= n, and n_1 n_1+...+n_k = n.
+    % such that 0 <= n_1, ..., n_k <= n, and n_1+...+n_k = n.
     % There are nchoosek(n+k-1, k-1) possible choices.
     % We stored each possible (n_1, ..., n_k) in a row in A.
     % Input: A nonnegative integer n, a positive integer k.

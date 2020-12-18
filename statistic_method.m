@@ -44,7 +44,7 @@ function statistic_method()
     CI_draw = [sample_prob_draw-CI_range_draw, sample_prob_draw+CI_range_draw];
 
     % Output
-    fprintf('Confidence interval with %d%%:\n', 100*(1-ALPHA));
+    fprintf('%d%% Confidence interval:\n', 100*(1-ALPHA));
     fprintf('Confidence interval for probability of PETER win is (%.7f, %.7f)\n', CI_PETER(1), CI_PETER(2));
     fprintf('Confidence interval for probability of COLIN win is (%.7f, %.7f)\n', CI_COLIN(1), CI_COLIN(2));
     fprintf('Confidence interval for probability of draw is (%.7f, %.7f)\n', CI_draw(1), CI_draw(2));
