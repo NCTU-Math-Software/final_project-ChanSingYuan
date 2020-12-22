@@ -1,7 +1,4 @@
-# final_project-ChanSingYuan
-final_project-ChanSingYuan created by GitHub Classroom
-
-#### <u>*Problem 10.*</u> *(Dice Game)* ####
+## Problem 10. *(Dice Game)* ##
 
 Peter has $9$ fair dices with number $\{1, 2, 3, 4\}$, and Colin has $6$ fair dices with $\{1, 2, 3, 4, 5, 6\}$. 
 They throw their own dices and calculate the sum of points they get independently.
