@@ -1,7 +1,6 @@
 function statistic_method()
-    % Let X_1, ..., X_N be iid random variables, where X_i denotes the indicator function I{PETER win}.
-    % Then X_1, ..., X_N is a random sample from Bernoulli(p), where p is unknown parameter,
-    % denotes the probability P(PETER win).
+    % Let X_1, ..., X_N be iid random variables, where X_i denotes the indicator function I{PETER win in game i}.
+    % Then X_1, ..., X_N is a random sample from Bernoulli(p), where p is unknown parameter, denotes the probability P(PETER win).
     % We find a 100(1-ALPHA)% confidence interval for p.
     % Similarly, we can estimate the probability P(COLIN win) and P(draw).
     % Input: None.

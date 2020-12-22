@@ -13,8 +13,8 @@ What is the probability of Peter win the game? How about the probability of Coli
 
 We use the following two method to solve the above problem.
 
-1. ***Probability Method***.
-2. ***Statistic Method***.
+1. ***Probability Method*** (Execute the program `probability_method`).
+2. ***Statistic Method*** (Execute the program `statistic_method`).
 
 ---
 
@@ -37,7 +37,7 @@ Then, the probability of Peter win is
 $\begin{array}{rcll}
 P(\mbox{Peter win}) & = & P(X > Y) \\
 & = & \sum\limits_{k_1 = 9}^{36}\sum\limits_{k_2 = 6}^{k_1-1} P(X = k_1, Y = k_2) \\
-& = & \sum\limits_{k_1 = 9}^{36}\sum\limits_{k_2 = 6}^{k_1-1} P(X = k_1)P(Y = k_2) & \mbox{, since }X\mbox{ and }Y\mbox{are independent.}
+& = & \sum\limits_{k_1 = 9}^{36}\sum\limits_{k_2 = 6}^{k_1-1} P(X = k_1)P(Y = k_2)\mbox{,} & \mbox{since }X\mbox{ and }Y\mbox{are independent.}
 \end{array}$
 
 For each $k_1$, $P(X = k_1) = P(\sum\limits_{i = 1}^4 X_i\cdot i = k_1) = \sum\limits_{
@@ -76,17 +76,20 @@ Now, we implement the ***probability method*** by the following steps.
 
 #### <u>*Statistic Method.*</u> ####
 
-Let $X_1, \ldots, X_n$ be a random sample from $\operatorname{Ber}(p)$, where $p$ is the unknown parameter, denote the probability that Peter win.
+Let $n$ be sample size and define $X_i = I\{\mbox{Peter win in game }i\}$ for $1 \leq i \leq n$.
 
-Define $\hat{p} = \frac{1}{n}\sum\limits_{i = 1}^n X_i$ be an estimator. Then a $100(1-\alpha)\%$ confidence interval for parameter $p$ is $(\hat{p}-z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p}+z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}})$, where $z_{\alpha/2}$ satisfies $P(Z > z_{\alpha/2}) = \frac{\alpha}{2}$, $Z$ denote the standard normal distribution.
+Then $X_1, \ldots, X_n$ is a random sample from $\operatorname{Ber}(p)$, where $p$ is the unknown parameter, denote the probability that Peter win.
 
-Similarly, we can find confidence interval for $P(\mbox{Colin win})$ and $P(\mbox{draw})$.
+Define $\widehat{p} = \frac{1}{n}\sum\limits_{i = 1}^n X_i$ be an estimator for $p$. Then a $100(1-\alpha)\%$ confidence interval for parameter $p$ is $(\widehat{p}-z_{\alpha/2}\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}}, \widehat{p}+z_{\alpha/2}\sqrt{\frac{\widehat{p}(1-\widehat{p})}{n}})$, where $z_{\alpha/2}$ satisfies $P(Z > z_{\alpha/2}) = \frac{\alpha}{2}$, $Z$ denote the standard normal distribution.
+
+Similarly, we can find a $100(1-\alpha)\%$ confidence interval for $P(\mbox{Colin win})$ and $P(\mbox{draw})$, respectively.
 
 
 
 ***Result:*** *(Here we set $n = 10^6$ and $\alpha = 0.05$)*
 
 > $95\%$ Confidence interval:
+>
 > Confidence interval for probability of PETER win is $(0.5725357, 0.5744743)$
 > Confidence interval for probability of COLIN win is $(0.3549316, 0.3568084)$
 > Confidence interval for probability of draw is $(0.0701229, 0.0711271)$
@@ -95,7 +98,7 @@ Similarly, we can find confidence interval for $P(\mbox{Colin win})$ and $P(\mbo
 
 #### <u>*Remark.*</u> ####
 
-We have an auxiliary function called `multichoose(n, k)`, that given integers $n \geq 0$ and $k \geq 1$, find all possible integers $n_1, \ldots, n_k$ such that $0 \leq n_1, \ldots, n_k \leq n$, and $n_1+\cdots+n_k = n$.
+We have an auxiliary function called `multichoose(n, k)`, that given integers $n \geq 0$ and $k \geq 1$, we find all possible integers $n_1, \ldots, n_k$ such that $0 \leq n_1, \ldots, n_k \leq n$, and $n_1+\cdots+n_k = n$.
 
 There are $\binom{n-k+1}{k-1}$ possible choices. We return a matrix $A$ with each row is a possible $(n_1, \ldots, n_k)$.
 
